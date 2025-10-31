@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #1a1a1a;
+        color: white;
+        font-family: Arial, sans-serif;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .effect {
+        margin: 3rem 0;
+      }
+
+      /* Basic layered shadow */
+      .layered {
+        font-size: 3rem;
+        color: #fff;
+        text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb,
+          0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1),
+          0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Neon effect */
+      .neon {
+        font-size: 3rem;
+        color: #fff;
+        animation: neon 1.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes neon {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+            0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de,
+            0 0 100px #ff00de, 0 0 150px #ff00de;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+            0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de,
+            0 0 50px #ff00de, 0 0 75px #ff00de;
+        }
+      }
+
+      /* Flame effect */
+      .flame {
+        font-size: 3rem;
+        color: #fff;
+        animation: flame 0.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes flame {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+            0 0 40px #ff4500, 0 0 70px #ff4500, 0 0 80px #ff4500,
+            0 -5px 100px #ff8c00, 0 -10px 150px #ffdd00;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+            0 0 20px #ff4500, 0 0 35px #ff4500, 0 0 40px #ff4500,
+            0 -2px 50px #ff8c00, 0 -5px 75px #ffdd00;
+        }
+      }
+
+      /* Retro gaming effect */
+      .retro {
+        font-size: 3rem;
+        color: #0ff;
+        text-shadow: 2px 2px 0 #0fa, -2px -2px 0 #f0a;
+        animation: glitch 0.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes glitch {
+        from {
+          text-shadow: 2px 2px 0 #0fa, -2px -2px 0 #f0a;
+        }
+        to {
+          text-shadow: -2px -2px 0 #0fa, 2px 2px 0 #f0a;
+        }
+      }
+
+      /* Realistic drop shadow */
+      .realistic {
+        font-size: 3rem;
+        color: #fff;
+        text-shadow: 0 1px 0 hsl(174, 5%, 80%), 0 2px 0 hsl(174, 5%, 75%),
+          0 3px 0 hsl(174, 5%, 70%), 0 4px 0 hsl(174, 5%, 66%),
+          0 5px 0 hsl(174, 5%, 64%), 0 6px 0 hsl(174, 5%, 62%),
+          0 7px 0 hsl(174, 5%, 61%), 0 8px 0 hsl(174, 5%, 60%),
+          0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2),
+          0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2),
+          0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Multiple light sources */
+      .multi-light {
+        font-size: 3rem;
+        color: #fff;
+        text-shadow: 3px 3px 0 rgba(255, 0, 0, 0.5),
+          6px 6px 0 rgba(0, 255, 0, 0.3), 9px 9px 0 rgba(0, 0, 255, 0.1);
+        animation: light-shift 4s ease-in-out infinite;
+      }
+
+      @keyframes light-shift {
+        0% {
+          text-shadow: 3px 3px 0 rgba(255, 0, 0, 0.5),
+            6px 6px 0 rgba(0, 255, 0, 0.3), 9px 9px 0 rgba(0, 0, 255, 0.1);
+        }
+        50% {
+          text-shadow: -3px -3px 0 rgba(255, 0, 0, 0.5),
+            -6px -6px 0 rgba(0, 255, 0, 0.3), -9px -9px 0 rgba(0, 0, 255, 0.1);
+        }
+        100% {
+          text-shadow: 3px 3px 0 rgba(255, 0, 0, 0.5),
+            6px 6px 0 rgba(0, 255, 0, 0.3), 9px 9px 0 rgba(0, 0, 255, 0.1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="effect">
+        <div class="layered">Layered Shadow</div>
+      </div>
+
+      <div class="effect">
+        <div class="neon">Neon Glow</div>
+      </div>
+
+      <div class="effect">
+        <div class="flame">Flame Effect</div>
+      </div>
+
+      <div class="effect">
+        <div class="retro">Retro Gaming</div>
+      </div>
+
+      <div class="effect">
+        <div class="realistic">Realistic Drop</div>
+      </div>
+
+      <div class="effect">
+        <div class="multi-light">Multi-Light</div>
+      </div>
+    </div>
+  </body>
+</html>

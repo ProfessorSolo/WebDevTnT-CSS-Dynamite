@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .scene {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: 
+        /* Stars - multiple layers for depth */ radial-gradient(
+            1px 1px at 10% 10%,
+            #fff 1px,
+            transparent 0
+          ),
+          radial-gradient(1px 1px at 20% 20%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 30% 30%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 40% 40%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 50% 50%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 60% 60%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 70% 70%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 80% 80%, #fff 1px, transparent 0),
+          radial-gradient(1px 1px at 90% 90%, #fff 1px, transparent 0),
+          /* Moon with glow */
+            radial-gradient(
+              40px at 80% 20%,
+              rgba(255, 255, 255, 0.8),
+              rgba(255, 255, 255, 0.4) 50%,
+              transparent 70%
+            ),
+          /* Sky gradient */
+            linear-gradient(
+              to bottom,
+              #000000 0%,
+              #051b2c 40%,
+              #0a2d4a 70%,
+              #0f3f68 100%
+            );
+      }
+
+      .city {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80%;
+        background:
+        /* Front row buildings */ linear-gradient(
+              0deg,
+              #000 25%,
+              transparent 25%
+            )
+            0% 100% / 4% 90%,
+          linear-gradient(0deg, #000 45%, transparent 45%) 5% 100% / 3% 85%,
+          linear-gradient(0deg, #000 35%, transparent 35%) 9% 100% / 5% 95%,
+          linear-gradient(0deg, #000 55%, transparent 55%) 15% 100% / 4% 80%,
+          linear-gradient(0deg, #000 30%, transparent 30%) 20% 100% / 6% 90%,
+          linear-gradient(0deg, #000 40%, transparent 40%) 27% 100% / 3% 85%,
+          linear-gradient(0deg, #000 45%, transparent 45%) 31% 100% / 5% 95%,
+          linear-gradient(0deg, #000 35%, transparent 35%) 37% 100% / 4% 80%,
+          linear-gradient(0deg, #000 50%, transparent 50%) 42% 100% / 6% 90%,
+          linear-gradient(0deg, #000 30%, transparent 30%) 49% 100% / 3% 85%,
+          linear-gradient(0deg, #000 45%, transparent 45%) 53% 100% / 5% 95%,
+          linear-gradient(0deg, #000 35%, transparent 35%) 59% 100% / 4% 80%,
+          linear-gradient(0deg, #000 25%, transparent 25%) 64% 100% / 6% 90%,
+          linear-gradient(0deg, #000 55%, transparent 55%) 71% 100% / 3% 85%,
+          linear-gradient(0deg, #000 35%, transparent 35%) 75% 100% / 5% 95%,
+          linear-gradient(0deg, #000 45%, transparent 45%) 81% 100% / 4% 80%,
+          linear-gradient(0deg, #000 30%, transparent 30%) 86% 100% / 6% 90%,
+          linear-gradient(0deg, #000 50%, transparent 50%) 93% 100% / 3% 85%,
+          linear-gradient(0deg, #000 40%, transparent 40%) 97% 100% / 5% 95%;
+        background-repeat: no-repeat;
+      }
+
+      .windows {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80%;
+        opacity: 0.8;
+        background:
+        /* Building windows */ repeating-linear-gradient(
+              90deg,
+              transparent 0,
+              transparent 4%,
+              rgba(255, 247, 180, 0.2) 4.5%,
+              transparent 5%
+            )
+            0 0 / 100% 100%,
+          repeating-linear-gradient(
+              0deg,
+              transparent 0,
+              transparent 5%,
+              rgba(255, 247, 180, 0.2) 5.5%,
+              transparent 6%
+            )
+            0 0 / 100% 100%;
+      }
+
+      .neon-signs {
+        position: absolute;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background:
+        /* Neon signs */ radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 0, 140, 0.8) 0%,
+            rgba(255, 0, 140, 0.3) 20%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 60% 40%,
+            rgba(0, 255, 255, 0.8) 0%,
+            rgba(0, 255, 255, 0.3) 20%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 60%,
+            rgba(255, 119, 0, 0.8) 0%,
+            rgba(255, 119, 0, 0.3) 20%,
+            transparent 40%
+          );
+      }
+
+      .fog {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(
+          0deg,
+          rgba(103, 69, 187, 0.4) 0%,
+          rgba(103, 69, 187, 0.2) 30%,
+          rgba(103, 69, 187, 0.1) 60%,
+          transparent 100%
+        );
+      }
+
+      .light-beams {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background:
+        /* Light beams */ linear-gradient(
+              65deg,
+              transparent 0%,
+              transparent 40%,
+              rgba(255, 255, 255, 0.05) 45%,
+              transparent 50%
+            )
+            20% 0 / 30% 100%,
+          linear-gradient(
+              -65deg,
+              transparent 0%,
+              transparent 40%,
+              rgba(255, 255, 255, 0.05) 45%,
+              transparent 50%
+            )
+            80% 0 / 30% 100%;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="city"></div>
+      <div class="windows"></div>
+      <div class="neon-signs"></div>
+      <div class="light-beams"></div>
+      <div class="fog"></div>
+    </div>
+  </body>
+</html>

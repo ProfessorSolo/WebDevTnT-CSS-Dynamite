@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Dynamite</title>
+  <!-- Bootstrap CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+
+<body>
+  <main>
+    <h1>CSS Dynamite</h1>
+    <nav aria-label="CSS examples tabs">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="gradients-tab" data-bs-toggle="tab" data-bs-target="#gradients" type="button" role="tab" aria-controls="gradients" aria-selected="true">
+            Gradients
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="border-radius-tab" data-bs-toggle="tab" data-bs-target="#border-radius" type="button" role="tab" aria-controls="border-radius" aria-selected="false">
+            Border Radius
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="opacity-tab" data-bs-toggle="tab" data-bs-target="#opacity" type="button" role="tab" aria-controls="opacity" aria-selected="false">
+            Opacity & RGBA
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="shadows-tab" data-bs-toggle="tab" data-bs-target="#shadows" type="button" role="tab" aria-controls="shadows" aria-selected="false">
+            Shadows
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="filter-tab" data-bs-toggle="tab" data-bs-target="#filter" type="button" role="tab" aria-controls="filter" aria-selected="false">
+            Filter
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <section class="tab-content">
+      <article id="gradients" class="tab-pane active" role="tabpanel" aria-labelledby="gradients-tab" tabindex="0">
+        <h2>Gradients</h2>
+        <section id="linear-gradient">
+          <h3>Linear Gradients</h3>
+        </section>
+        <section id="radial-gradient">
+          <h3>Radial Gradients</h3>
+        </section>
+        <section id="conic-gradient">
+          <h3>Conic Gradients</h3>
+        </section>
+        <section id="repeating-gradient">
+          <h3>Repeating Gradients</h3>
+        </section>
+        <section id="multiple-gradient">
+          <h3>Multiple Gradients</h3>
+        </section>
+      </article>
+      <article id="border-radius" class="tab-pane" role="tabpanel" aria-labelledby="border-radius-tab" tabindex="0">
+        <h2>Border Radius</h2>
+        <section id="all-length">
+          <h3>Equal Rounding by Length</h3>
+          <code>border-radius: 3rem;</code>
+        </section>
+        <section id="all-percent">
+          <h3>Equal Rounding by Percent</h3>
+          <code>border-radius: 10%;</code>
+        </section>
+        <section id="circular">
+          <h3>Circular</h3>
+          <code>
+            <pre>
+border-radius: 50%;
+// if equal width and height
+width: 20rem;
+height: 20rem;
+</pre>
+          </code>
+        </section>
+        <section id="top-left">
+          <h3>Individual Corner</h3>
+          <code>
+            <pre>
+border-radius: 20% 0 0 0;
+// Clockwise from top-left</pre>
+          </code>
+        </section>
+        <section id="alternating-pairs">
+          <h3>Alternating Pairs</h3>
+          <code>border-radius: 1rem 5rem;</code>
+        </section>
+        <section id="horizontal-vertical">
+          <h3>Non-uniform</h3>
+          <code>
+            <pre>
+border-radius: 5rem / 10rem;
+// Horizontal / Vertical
+</pre>
+          </code>
+        </section>
+      </article>
+      <article id="opacity" class="tab-pane" role="tabpanel" aria-labelledby="opacity-tab" tabindex="0">
+        <h2>Opacity and Alpha Channels (RGBA)</h2>
+
+        <section id="simple-opacity">
+          <h3>Simple Opacity</h3>
+          <div class="container">
+            <div class="josh-box">
+              <img src="./images/JoshuaGiraffe_Cropped.png" alt="Josh (Giraffe) Solomon" />
+            </div>
+          </div>
+        </section>
+        <section id="nested-opacity">
+          <h3>Inherited Opacity</h3>
+          <div class="container">
+            <div class="josh-box">
+              <img src="./images/JoshuaGiraffe_Cropped.png" alt="Josh (Giraffe) Solomon" />
+              <div class="red-box">
+                <div class="blue-box"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="rgba">
+          <h3>rgba - alpha channel</h3>
+          <div class="container">
+            <div class="red-box"></div>
+            <div class="blue-box"></div>
+          </div>
+        </section>
+      </article>
+
+      <article id="shadows" class="tab-pane" role="tabpanel" aria-labelledby="shadows-tab" tabindex="0">
+        <h2>Shadows</h2>
+        <section id="box-shadow">
+          <h3>Box Shadow</h3>
+          <div id="shadow-box" class="box-10"></div>
+        </section>
+        <section id="inset-shadow">
+          <h3>Inset Shadow</h3>
+          <div id="shadow-box-inset" class="box-10"></div>
+        </section>
+        <section id="multi-shadow">
+          <h3>Multi Shadow</h3>
+          <div id="shadow-box-multi" class="box-10"></div>
+        </section>
+        <section id="text-shadow">
+          <h3>Text Shadow</h3>
+          <div id="shadow-text">Floating Text</div>
+          <div id="eighties-text">80s Text</div>
+        </section>
+      </article>
+      <article id="filter" class="tab-pane" role="tabpanel" aria-labelledby="filter-tab" tabindex="0">
+        <h2>Filter</h2>
+        <section id="blur">
+          <h3>blur()</h3>
+          <div class="box-10 filter-box blur"></div>
+        </section>
+        <section id="blur-image">
+          <h3>blur()</h3>
+          <div class="box-10 filter-box-image blur"></div>
+        </section>
+
+        <section id="hue">
+          <h3>hue()</h3>
+          <div class="box-10 filter-box-image hue"></div>
+        </section>
+        <section id="saturation">
+          <h3>saturation()</h3>
+          <div class="box-10 filter-box-image saturation"></div>
+        </section>
+        <section id="brightness">
+          <h3>brightness()</h3>
+          <div class="box-10 filter-box-image brightness"></div>
+        </section>
+        <section id="contrast">
+          <h3>contrast()</h3>
+          <div class="box-10 filter-box-image contrast"></div>
+        </section>
+        <section id="grayscale">
+          <h3>grayscale()</h3>
+          <div class="box-10 filter-box-image grayscale"></div>
+        </section>
+        <section id="sepia">
+          <h3>sepia()</h3>
+          <div class="box-10 filter-box-image sepia"></div>
+        </section>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <span class="brand">Professor Solo · WebDevTnT</span>
+    <span class="tag">© 2025 · “p.s. keep learning.”</span>
+  </footer>
+  <!-- Bootstrap JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
