@@ -314,13 +314,6 @@ textarea:focus-visible {
    Demo: Border Radius
    =========================== */
 
-#border-radius {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
 #border-radius section {
   aspect-ratio: 1 / 1; /* 👈 always square */
   flex: 1 1 320px;
@@ -331,7 +324,6 @@ textarea:focus-visible {
   justify-content: center;
   background: var(--brand-surface);
   border: 2px solid var(--brand-line);
-  border-radius: var(--radius);
   box-shadow: var(--shadow-hard);
   padding: 2rem;
   text-align: center;
@@ -612,6 +604,47 @@ img {
     background: #111827;
     border-color: #273142;
     box-shadow: 0 16px 40px -18px rgba(0, 0, 0, 0.85);
+  }
+
+  #linear-gradient {
+    background: linear-gradient(135deg, #8400ff 0%, #ff5252 100%);
+    border: none;
+    box-shadow: var(--shadow-soft);
+  }
+
+  #radial-gradient {
+    background: radial-gradient(circle, #f700ff 0%, #750d3f 100%);
+    border: none;
+    box-shadow: var(--shadow-soft);
+  }
+
+  #conic-gradient {
+    background: conic-gradient(from 0deg, #ff7a00, #7c0c0c, #ff7a00);
+  }
+
+  #repeating-gradient {
+    background: repeating-conic-gradient(
+      from 45deg at 50% 100%,
+      #ff7a00 0deg 15deg,
+      #ec1111 30deg 60deg
+    );
+  }
+
+  #multiple-gradient {
+    /* Keep “sun” bright in both themes */
+    background: linear-gradient(
+        0deg,
+        #180ed8 0%,
+        rgba(0, 212, 255, 0.8) 20%,
+        rgba(0, 212, 255, 0) 30%
+      ),
+      radial-gradient(
+        circle,
+        #ff7a00 0%,
+        #ffc107 20%,
+        #fd1d1d 30%,
+        #fcb045 100%
+      );
   }
 
   footer {
