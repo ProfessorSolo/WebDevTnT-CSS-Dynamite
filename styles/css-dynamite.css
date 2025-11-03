@@ -142,6 +142,10 @@ h2 {
   font-size: clamp(1.25rem, 1.2vw + 0.9rem, 2rem);
   color: var(--brand-muted);
 }
+h3 {
+  font-size: clamp(1.1rem, 1vw + 0.8rem, 1.5rem);
+  color: var(--brand-muted);
+}
 
 /* Main container */
 main {
@@ -317,7 +321,7 @@ textarea:focus-visible {
 #border-radius section {
   aspect-ratio: 1 / 1; /* 👈 always square */
   flex: 1 1 320px;
-  max-width: 400px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
